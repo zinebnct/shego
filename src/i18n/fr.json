@@ -1,0 +1,145 @@
+{
+  "brand": {
+    "name": "SHEGO",
+    "signature": "Find your girls. Go."
+  },
+  "common": {
+    "continue": "Continuer",
+    "start": "Commencer",
+    "back": "Retour",
+    "skip": "Passer",
+    "later": "Plus tard",
+    "close": "Fermer",
+    "retry": "Réessayer",
+    "add": "Ajouter",
+    "activate": "Activer",
+    "signOut": "Se déconnecter"
+  },
+  "tabs": {
+    "home": "Accueil",
+    "myPlans": "Mes plans",
+    "messages": "Messages",
+    "profile": "Profil",
+    "create": "Créer"
+  },
+  "onboarding": {
+    "progress": "Étape {{current}} sur {{total}}",
+    "welcome": {
+      "headline": "Publie une envie. Trouve des filles partantes. Aujourd'hui, près de toi.",
+      "signIn": "Tu as déjà un compte ? Se connecter"
+    },
+    "welcomeTrust": {
+      "headline": "Une communauté entre femmes, modérée et protégée",
+      "authenticated": "Chaque compte est authentifié via Apple ou Google.",
+      "control": "Tu gardes le contrôle : signale ou bloque à tout moment."
+    },
+    "auth": {
+      "title": "Connecte-toi pour continuer",
+      "subtitle": "Aucun mot de passe à retenir, aucun numéro à confirmer.",
+      "apple": "Continuer avec Apple",
+      "google": "Continuer avec Google"
+    },
+    "firstName": {
+      "title": "Comment on t'appelle ?",
+      "subtitle": "C'est ce prénom qui apparaîtra sur tes plans et dans les chats.",
+      "error": "Il faut au moins 2 caractères."
+    },
+    "birthDate": {
+      "title": "Quelle est ta date de naissance ?",
+      "subtitle": "Il faut avoir 18 ans pour utiliser SHEGO. Ton âge sera visible, pas ta date de naissance.",
+      "minor": "SHEGO est réservé aux personnes majeures."
+    },
+    "city": {
+      "title": "Où es-tu ?",
+      "subtitle": "Casablanca, pour l'instant — SHEGO arrive bientôt dans d'autres villes."
+    },
+    "photo": {
+      "title": "Ajoute une photo",
+      "subtitle": "Une photo claire aide les participantes à se reconnaître lorsqu'elles se retrouvent.",
+      "take": "Prendre une photo",
+      "choose": "Choisir dans la galerie",
+      "use": "Utiliser cette photo",
+      "retake": "Reprendre"
+    },
+    "interests": {
+      "title": "Qu'est-ce qui te tente ?",
+      "subtitle": "Choisis les activités qui te tentent.",
+      "hint": "Tu pourras modifier tes choix plus tard."
+    },
+    "bio": {
+      "title": "Un mot sur toi ? (optionnel)"
+    },
+    "notifications": {
+      "title": "Ne rate rien",
+      "subtitle": "On te préviendra quand quelqu'une rejoint ton plan, accepte ta demande, ou t'écrit dans un chat."
+    },
+    "location": {
+      "title": "Trouve ce qui se passe près de toi",
+      "subtitle": "SHEGO te montre les plans autour de toi. Sans ta position, tu peux seulement voir les plans dans Casablanca en général."
+    }
+  },
+  "account": {
+    "gate": {
+      "photo": "Ajoute une photo pour pouvoir créer ou rejoindre un plan.",
+      "profile": "Termine ton profil pour pouvoir créer ou rejoindre un plan.",
+      "profileAndPhoto": "Termine ton profil et ajoute une photo pour créer ou rejoindre un plan."
+    },
+    "underReview": "Ton compte est en cours d'examen suite à un signalement. Certaines actions sont limitées pendant ce temps.",
+    "restricted": "Ce compte ne peut pas être utilisé pour l'instant."
+  },
+  "states": {
+    "offline": "Pas de connexion. On réessaie automatiquement.",
+    "error": "Ça n'a pas fonctionné. Vérifie ta connexion."
+  },
+  "categories": {
+    "all": "Tout",
+    "cafe": "Café",
+    "brunch": "Brunch / Restaurant",
+    "shopping": "Shopping",
+    "cinema": "Cinéma / Culture",
+    "sport": "Sport / Fitness",
+    "balade": "Balade / Extérieur",
+    "plage": "Plage / Piscine",
+    "concert": "Concert / Événement",
+    "creatif": "Activité créative",
+    "voyage": "Voyage / Weekend",
+    "soiree": "Soirée / Sortie nocturne",
+    "autre": "Autre"
+  },
+  "modes": {
+    "auto": "Direct",
+    "request": "Sur demande"
+  },
+  "errors": {
+    "account_not_ready": "Termine ton profil pour pouvoir créer ou rejoindre un plan.",
+    "under_review": "Ton compte est en cours d'examen suite à un signalement. Certaines actions sont limitées pendant ce temps.",
+    "account_restricted": "Ce compte ne peut pas être utilisé pour l'instant.",
+    "max_active_plans": "Tu as déjà 3 plans actifs.",
+    "plan_full": "Ce plan est complet.",
+    "plan_not_active": "Ça n'a pas fonctionné. Réessaie.",
+    "already_blocked": "Ça n'a pas fonctionné. Réessaie.",
+    "already_participating": "Ça n'a pas fonctionné. Réessaie.",
+    "forbidden": "Ça n'a pas fonctionné. Réessaie.",
+    "unauthorized": "La connexion n'a pas abouti. Réessaie.",
+    "not_found": "Ça n'a pas fonctionné. Réessaie.",
+    "invalid_request": "Ça n'a pas fonctionné. Réessaie.",
+    "not_implemented": "Ça n'a pas fonctionné. Réessaie.",
+    "auth_cancelled": "La connexion n'a pas abouti. Réessaie.",
+    "auth_failed": "La connexion n'a pas abouti. Réessaie.",
+    "auth_unavailable": "La connexion n'a pas abouti. Réessaie.",
+    "photo_upload_failed": "Ça n'a pas fonctionné. Réessaie.",
+    "network": "Ça n'a pas fonctionné. Vérifie ta connexion.",
+    "unknown": "Ça n'a pas fonctionné. Réessaie."
+  },
+  "dev": {
+    "placeholder": "Écran en cours de construction."
+  },
+  "settings": {
+    "title": "Paramètres"
+  },
+  "plans": {
+    "join": "Rejoindre",
+    "requestJoin": "Demander à rejoindre",
+    "openChat": "Ouvrir le chat"
+  }
+}

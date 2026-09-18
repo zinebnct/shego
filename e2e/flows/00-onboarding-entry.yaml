@@ -1,0 +1,15 @@
+# Écrans 1 → 3 de l'onboarding (Onboarding V1.3). appId de développement : voir app.config.ts.
+appId: com.shego.app.dev
+---
+- launchApp:
+    clearState: true
+- assertVisible: "Publie une envie. Trouve des filles partantes. Aujourd'hui, près de toi."
+- tapOn: 'Commencer'
+# Cadre de confiance : honnête, jamais une promesse de vérification.
+- assertVisible: 'Une communauté entre femmes, modérée et protégée'
+- assertVisible: 'Chaque compte est authentifié via Apple ou Google.'
+- assertNotVisible: '.*vérifiée.*'
+- tapOn: 'Commencer'
+- assertVisible: 'Connecte-toi pour continuer'
+- assertVisible: 'Aucun mot de passe à retenir, aucun numéro à confirmer.'
+- assertVisible: 'Continuer avec Google'

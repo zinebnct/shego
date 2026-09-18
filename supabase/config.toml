@@ -1,0 +1,77 @@
+# SHEGO — configuration Supabase CLI (environnement local `supabase start`).
+# Staging et production sont des PROJETS Supabase séparés (Blueprint §26) : leurs réglages Auth se font dans le
+# dashboard ou via `supabase config push`. Les secrets sont lus depuis l'environnement (`env(...)`), jamais écrits ici.
+project_id = "shego"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 17
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[realtime]
+enabled = true
+
+[studio]
+enabled = true
+port = 54323
+
+[storage]
+enabled = true
+file_size_limit = "5MiB"
+
+[auth]
+enabled = true
+site_url = "shego://"
+additional_redirect_urls = ["shego://auth/callback"]
+jwt_expiry = 3600
+enable_refresh_token_rotation = true
+refresh_token_reuse_interval = 10
+enable_signup = true
+enable_anonymous_sign_ins = false
+enable_manual_linking = false
+
+# Sign in with Apple / Google sont les SEULES méthodes de connexion (Blueprint §10) :
+# aucun email/mot de passe, aucun fournisseur de messages texte, aucun code à usage unique.
+[auth.email]
+enable_signup = false
+
+# Apple : `client_id` liste le Services ID (flow OAuth Android) ET l'identifiant d'app iOS (flow natif), séparés par une virgule.
+# `secret` est un JWT ES256 généré depuis APPLE_TEAM_ID / APPLE_KEY_ID / APPLE_PRIVATE_KEY — à renouveler tous les 6 mois.
+[auth.external.apple]
+enabled = true
+client_id = "env(APPLE_CLIENT_IDS)"
+secret = "env(APPLE_CLIENT_SECRET)"
+redirect_uri = ""
+url = ""
+skip_nonce_check = false
+
+# Google : le client ID « Web » valide l'id_token émis par les SDK natifs iOS/Android.
+# `skip_nonce_check = true` : le SDK Google natif n'expose pas de nonce (recommandation Supabase pour React Native).
+[auth.external.google]
+enabled = true
+client_id = "env(GOOGLE_CLIENT_ID_WEB)"
+secret = "env(GOOGLE_CLIENT_SECRET)"
+redirect_uri = ""
+url = ""
+skip_nonce_check = true
+
+[edge_runtime]
+enabled = true
+policy = "per_worker"
+
+# Fallback scheduler (Blueprint §38) : appelé par un déclencheur externe, authentifié par la clé service.
+[functions.scheduled-tasks-tick]
+verify_jwt = false
+[functions.notifications-dispatch]
+verify_jwt = false

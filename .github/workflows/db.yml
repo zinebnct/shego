@@ -1,0 +1,30 @@
+name: Database
+
+# Validation AUTORITATIVE des migrations : applique supabase/migrations + seed sur une vraie pile Supabase locale
+# (PostGIS, Auth, Storage réels). Déclenché uniquement quand `supabase/**` change.
+on:
+  pull_request:
+    paths: ['supabase/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  migrations:
+    name: Migrations sur Supabase local
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - name: Démarrer la pile locale
+        run: supabase start
+      - name: Appliquer migrations et seed
+        run: supabase db reset
+      - name: Lint SQL (plpgsql_check)
+        run: supabase db lint --level warning
+      - name: Arrêter la pile
+        if: always()
+        run: supabase stop --no-backup

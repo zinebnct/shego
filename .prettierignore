@@ -1,0 +1,12 @@
+# Spécifications LOCKED : ne jamais reformater (ni modifier) — source de vérité.
+docs/
+node_modules/
+package-lock.json
+.expo/
+dist/
+coverage/
+ios/
+android/
+supabase/migrations/
+supabase/seed.sql
+*.md

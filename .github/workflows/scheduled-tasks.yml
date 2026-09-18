@@ -1,0 +1,28 @@
+name: Scheduled tasks tick
+
+# FALLBACK du scheduler (Technical Blueprint V1.3 §38) : à activer UNIQUEMENT si `pg_cron` n'est pas disponible sur le
+# projet Supabase. La logique métier est en SQL (`fn_run_scheduled_tasks`) : seul le déclencheur change.
+# Pour activer : décommenter `schedule` et définir les secrets SUPABASE_URL et SUPABASE_SERVICE_ROLE_KEY
+# (environnement GitHub « production »). Désactivé par défaut.
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '*/5 * * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  tick:
+    name: Appeler scheduled-tasks-tick
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: POST scheduled-tasks-tick
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          curl --fail --silent --show-error -X POST \
+            "$SUPABASE_URL/functions/v1/scheduled-tasks-tick" \
+            -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY"
